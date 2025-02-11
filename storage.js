@@ -33,10 +33,14 @@ function loadData(event) {
             polygon = null;
         }
 
-        // 🔹 Supprimer le buffer et les distances si existants
-        if (bufferLayer) {
-            map.removeLayer(bufferLayer);
-            bufferLayer = null;
+        // 🔹 Supprimer les buffers et les distances si existants
+        if (bufferDemiLayer) {
+            map.removeLayer(bufferDemiLayer);
+            bufferDemiLayer = null;
+        }
+        if (bufferFondLayer) {
+            map.removeLayer(bufferFondLayer);
+            bufferFondLayer = null;
         }
         distanceLabels.forEach(label => map.removeLayer(label));
         distanceLabels = []; 
@@ -59,10 +63,6 @@ function loadData(event) {
                 polygon = null;
                 distanceLabels.forEach(label => map.removeLayer(label));
                 distanceLabels = [];
-                if (bufferLayer) {
-                    map.removeLayer(bufferLayer);
-                    bufferLayer = null;
-                }
             });
 
             // 🛠 Mettre à jour immédiatement la surface et les distances
@@ -87,8 +87,8 @@ function loadData(event) {
         }
 
         // 🔄 Mettre à jour le buffer après le chargement
-        updateBuffer();
-
+        updateBufferFond();
+        updateBufferDemi();
         
         console.log("📂 Polygone chargé avec succès !");
     };
