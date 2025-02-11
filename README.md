@@ -16,6 +16,7 @@ Fonctionnalites :
   - Artefacts restant (bouton reduir le polygone)
   - Ajuster la taille des sliders
   - affichage de l'air caché par les sliders
+  - Sauvegarde ne fonctionne pas, fichier storage à update
 
 Prochaines fonctionnalites a ajouter : 
   - Manipulation de la grille
